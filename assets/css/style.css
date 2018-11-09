@@ -1,0 +1,17 @@
+.choiceButton {
+    background-color: gray;
+    height: 20px;
+    width: 80px;
+}
+
+
+.choiceButton:hover {
+    background-color: green;
+}
+
+
+.playerBox, #resultBox {
+    border: black solid;
+    height: 200px;
+}
+

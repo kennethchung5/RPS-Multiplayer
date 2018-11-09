@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>    
+<body>
+
+    <div class="container">
+        <h3>There are <span id="testUserNum"></span> users viewing this page.</h3>
+
+        <h3>There are <span id="playerNum"></span> players in the game.</h3>
+
+        <form id="logInForm">
+            <div class="form-group">
+                <label>UserName</label>
+                <input class="form-control" id="userNameInput" aria-describedby="emailHelp" placeholder="Enter">
+            </div>
+           
+            <button id="logIn" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="row">
+            <div id="test"></div>
+        </div>
+
+        <div id="choiceBox">
+            <div id="RockButton" class="choiceButton">Rock</div>
+            <div id="PaperButton" class="choiceButton">Paper</div>
+            <div id="ScissorsButton" class="choiceButton">Scissors</div>
+        </div>
+
+
+        <div class="row">
+            <div id="player1Box" class="col-md-4 playerBox"></div>
+            <div id="resultBox" class="col-md-4"></div>
+            <div id="player2Box" class="col-md-4 playerBox"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
