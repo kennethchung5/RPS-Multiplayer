@@ -8,9 +8,9 @@
 <body>
 
     <div class="container">
-        <h3>There are <span id="testUserNum"></span> users viewing this page.</h3>
+        <h3>There are <span id="testUserCount"></span> users viewing this page.</h3>
 
-        <h3>There are <span id="playerNum"></span> players in the game.</h3>
+        <h3>There are <span id="playerCount"></span> players in the game.</h3>
 
         <form id="logInForm">
             <div class="form-group">
@@ -25,17 +25,55 @@
             <div id="test"></div>
         </div>
 
-        <div id="choiceBox">
-            <div id="RockButton" class="choiceButton">Rock</div>
-            <div id="PaperButton" class="choiceButton">Paper</div>
-            <div id="ScissorsButton" class="choiceButton">Scissors</div>
-        </div>
+
 
 
         <div class="row">
-            <div id="player1Box" class="col-md-4 playerBox"></div>
+
+            <div id="playerBox1" class="col-md-4 playerBox">
+                <div class="playerBoxContent">
+                    <div class="row">
+                        <div id="nameDisplay1" class="nameDisplay col-md-12"></div>
+                    </div>
+                    <div class="row">
+                        <div id="choiceDisplay1" class="choiceDisplay col-md-12"></div>
+                    </div>
+                    <div class="row">
+                        <div id="choiceBox1" class="choiceBox col-md-12">
+                            <div id="RockButton1" class="choiceButton">Rock</div>
+                            <div id="PaperButton1" class="choiceButton">Paper</div>
+                            <div id="ScissorsButton1" class="choiceButton">Scissors</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="scoreDisplay col-md-12">Wins: <span id="wins1"></span> Losses: <span id="losses1"></span></div>
+                    </div>
+                </div>
+            </div>
+
             <div id="resultBox" class="col-md-4"></div>
-            <div id="player2Box" class="col-md-4 playerBox"></div>
+
+            <div id="playerBox2" class="col-md-4 playerBox">
+                <div class="playerBoxContent">
+                    <div class="row">
+                        <div id="nameDisplay2" class="nameDisplay col-md-12"></div>
+                    </div>
+                    <div class="row">
+                        <div id="choiceDisplay2" class="choiceDisplay col-md-12"></div>
+                    </div>
+                    <div class="row">
+                        <div id="choiceBox2" class="choiceBox col-md-12">
+                            <div id="RockButton2" class="choiceButton">Rock</div>
+                            <div id="PaperButton2" class="choiceButton">Paper</div>
+                            <div id="ScissorsButton2" class="choiceButton">Scissors</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="scoreDisplay col-md-12">Wins: <span id="wins2"></span> Losses: <span id="losses2"></span></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>

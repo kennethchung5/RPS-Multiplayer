@@ -18,10 +18,12 @@ var playersRef = database.ref("/players");
 
 var playerCount = 0;
 
-var playerNum;
+//ID of the player for the session
+var playerID;
+
 
 ////on load setup
-$("#choiceBox").hide();
+$(".playerBoxContent").hide();
 
 connectedRef.on("value", function(snap) {
     if (snap.val()) {
@@ -46,43 +48,43 @@ $("#logIn").on("click", function(event) {
 
     $("#logInForm").hide();
 
+    //playerCount is updated by playersRef.on("value", function...) (below)
     if (playerCount === 1) {
-        $("#player1Box").append($("#choiceBox"));
-        playerNum = 1;
-        $("#test").text("You are player " + playerNum);
+        playerID = 1;
+        $("#test").text("You are player " + playerID);
     }
     else if (playerCount === 2) {
-        $("#player2Box").append($("#choiceBox"));
-        playerNum = 2;
-        $("#test").text("You are player " + playerNum);
+        playerID = 2;
+        $("#test").text("You are player " + playerID);
     }
-
-    $("#choiceBox").show();
-
 })
 
+
+// listen for change to playersRef; record # of players (numChildren) to playerCount
 playersRef.on("value", function(snap) {
-    $("#playerNum").text(snap.numChildren());
-
     playerCount = snap.numChildren();
-
-    // if (snap.numChildren() === 1) {
-
-    // }
-
-    // if (snap.numChildren() === 2) {
-    //     alert("Ready to start the game!");
-    //     // startGame();
-    // }
+    
+    $("#playerCount").text(playerCount);
 })
 
+// this is to handle disconnection by a player; the remaining player's playerID should be assigned to 1.
+playersRef.on("child_removed", function(snap) {
+    // alert("A child was removed!");
+    playerID = 1;
+
+    // eventually, remove this
+    $("#test").text("You are player " + playerID);
+})
+
+
+
+// just for testing
 connectionsRef.on("value", function(snap) {
-    $("#testUserNum").text(snap.numChildren());
+    $("#testUserCount").text(snap.numChildren());
 })
 
-// function startGame() {
-//     $("#choiceBox").show();
-// }
+
+
 
 $(document).on("click", ".choiceButton", function(){
     alert("You clicked " + $(this).text());

@@ -1,7 +1,10 @@
 .choiceButton {
     background-color: gray;
-    height: 20px;
-    width: 80px;
+    height: 50px;
+    width: 33%;
+
+    float: left;
+    border: blue dashed;
 }
 
 
@@ -15,3 +18,17 @@
     height: 200px;
 }
 
+
+.choiceBox {
+    height: 100px;
+}
+
+/*temp*/
+.nameDisplay, .choiceDisplay, .scoreDisplay {
+    height: 50px;
+    border: purple dotted thin;
+}
+
+.choiceBox {
+    height: 50px;
+}
